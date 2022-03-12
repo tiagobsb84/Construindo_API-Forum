@@ -9,6 +9,7 @@ public class TopicoForm {
 	private String titulo;
 	private String mensagem;
 	private String nomeCurso;
+	
 	public String getTitulo() {
 		return titulo;
 	}
