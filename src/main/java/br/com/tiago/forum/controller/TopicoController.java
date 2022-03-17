@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import br.com.tiago.forum.controller.form.TopicoForm;
+import br.com.tiago.forum.dtos.DetalhesDoTopicoDTO;
 import br.com.tiago.forum.dtos.TopicoDTO;
 import br.com.tiago.forum.models.Topico;
 import br.com.tiago.forum.repository.CursoRepository;
@@ -51,9 +52,9 @@ public class TopicoController {
 	}
 	
 	@GetMapping("/{id}")
-	public TopicoDTO detalhar(@PathVariable Long id) {
+	public DetalhesDoTopicoDTO detalhar(@PathVariable Long id) {
 		Topico topico = topicoRepository.getById(id);
-		return new TopicoDTO(topico);
+		return new DetalhesDoTopicoDTO(topico);
 	}
 	
 }
