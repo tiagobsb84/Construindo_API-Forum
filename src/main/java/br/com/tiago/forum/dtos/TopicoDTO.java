@@ -1,8 +1,8 @@
 package br.com.tiago.forum.dtos;
 
 import java.time.LocalDateTime;
-import java.util.List;
-import java.util.stream.Collectors;
+
+import org.springframework.data.domain.Page;
 
 import br.com.tiago.forum.models.Topico;
 
@@ -33,8 +33,8 @@ public class TopicoDTO {
 		return dataCriacao;
 	}
 
-	public static List<TopicoDTO> converter(List<Topico> topico) {
-		return topico.stream().map(TopicoDTO :: new).collect(Collectors.toList());
+	public static Page<TopicoDTO> converter(Page<Topico> topico) {
+		return topico.map(TopicoDTO::new);
 	}
 	
 	
