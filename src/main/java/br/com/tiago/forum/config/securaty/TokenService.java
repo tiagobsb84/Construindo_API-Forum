@@ -23,12 +23,13 @@ public class TokenService {
 		Usuario logado = (Usuario) authentication.getPrincipal();
 		Date hoje = new Date();
 		Date dataExpiracao = new Date(hoje.getDate() + Long.parseLong(expiration));
+		
 		return Jwts.builder()
 				.setIssuer("API do Forum")
 				.setSubject(logado.getId().toString())
 				.setIssuedAt(hoje)
 				.setExpiration(dataExpiracao)
-				.signWith(SignatureAlgorithm.ES256, secret)
+				.signWith(SignatureAlgorithm.HS256, secret)
 				.compact(); 
 	}
 
