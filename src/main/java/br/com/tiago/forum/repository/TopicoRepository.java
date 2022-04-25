@@ -8,6 +8,6 @@ import br.com.tiago.forum.models.Topico;
 
 public interface TopicoRepository extends JpaRepository<Topico, Long> {
 
-	Page<Topico> findByCurso_Nome(String nomeCurso, Pageable paginacao);
+	Page<Topico> findByCursoNome(String nomeCurso, Pageable paginacao);
 	
 }

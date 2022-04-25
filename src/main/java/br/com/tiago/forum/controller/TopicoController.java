@@ -52,7 +52,7 @@ public class TopicoController {
 			Page<Topico> topicos = topicoRepository.findAll(paginacao);
 			return TopicoDTO.converter(topicos);						
 		} else {
-			Page<Topico> topicos = topicoRepository.findByCurso_Nome(nomeCurso, paginacao);
+			Page<Topico> topicos = topicoRepository.findByCursoNome(nomeCurso, paginacao);
 			return TopicoDTO.converter(topicos);
 		}
 	}
